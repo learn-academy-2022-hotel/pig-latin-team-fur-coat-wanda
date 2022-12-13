@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import './App.css'
 import butcherPigImage from './assets/butcherPig.jpeg'
-
+// apple through queen squeal fry fluent
 const App = () => {
 
   // ACTION ITEM: to make the development process easier there are some preassigned words in the input field, when you are ready for your full user experience delete the test words passed to useState and pass an empty string
-  const [userInput, setUserInput] = useState("apple through queen squeal fry fluent")
+  const [userInput, setUserInput] = useState()
   const [inputTranslated, setInputTranslated] = useState("")
 
   // ACTION ITEM: the "myPigLatinCodeHere" function is where you will put your logic to translate the sentence entered by the user into Pig Latin
   const myPigLatinCodeHere = () => {
+
 
     // NO MODIFICATION NEEDED: the variable "arrayOfUserInput" will contain the text input from the user split into an array of words
     const arrayOfUserInput = userInput.split(" ")
@@ -32,8 +33,17 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
+      
+      //PSEUDOCODE 
+      // take the first letter of each word in a statement and identify if the word begins with a vowel
+      // if a it does begin with a vowel then the word will be taken in and add "way" to the end.
+      // and then return the new word
 
-    
+      console.log(eachWord[0])
+      
+      if (eachWord[0].match(/[aeiou]/)) {
+        return eachWord + "way"
+      }
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
