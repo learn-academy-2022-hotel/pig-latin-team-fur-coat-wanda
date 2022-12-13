@@ -39,11 +39,14 @@ const App = () => {
       // if a it does begin with a vowel then the word will be taken in and add "way" to the end.
       // and then return the new word
 
-      console.log(eachWord[0])
-      
       if (eachWord[0].match(/[aeiou]/)) {
         return eachWord + "way"
+      } else if ((eachWord[0] + eachWord[1]) === "qu") {
+        let wordPiece = eachWord.slice(2,eachWord.length)
+        return wordPiece + "quay"
       }
+
+      // else if (eachWord[0, 1])
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
