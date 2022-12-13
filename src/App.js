@@ -39,6 +39,9 @@ const App = () => {
       // if a it does begin with a vowel then the word will be taken in and add "way" to the end.
       // and then return the new word
 
+      //find the first vowel
+      //then slice off the rest of the word and add it to the end
+
       if (eachWord[0].match(/[aeiou]/)) {
         return eachWord + "way"
       } else if ((eachWord[0] + eachWord[1]) === "qu") {
@@ -48,7 +51,10 @@ const App = () => {
         let beginningToEnd = eachWord.slice(0, eachWord.length -1)
         return "y" + beginningToEnd + "ay" 
       } else {
-        return eachWord
+        let i = (eachWord[eachWord.search(/[aeiou]/)])
+        let firstPart = eachWord.slice(0, eachWord.indexOf(i))
+        let secondPart = eachWord.slice(eachWord.indexOf(i), eachWord.length)
+        return secondPart + firstPart + "ay"
       }
 
       // else if (eachWord[0, 1])
