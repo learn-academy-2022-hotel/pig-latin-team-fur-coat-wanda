@@ -44,6 +44,11 @@ const App = () => {
       } else if ((eachWord[0] + eachWord[1]) === "qu") {
         let wordPiece = eachWord.slice(2,eachWord.length)
         return wordPiece + "quay"
+      } else if (eachWord.endsWith("y")) { 
+        let beginningToEnd = eachWord.slice(0, eachWord.length -1)
+        return "y" + beginningToEnd + "ay" 
+      } else {
+        return eachWord
       }
 
       // else if (eachWord[0, 1])
@@ -62,7 +67,7 @@ const App = () => {
 
   // ACTION ITEM: this method restarts the game by setting the original state, when you are ready for your full user experience delete the test words in setUserInput and pass an empty string
   const restartGame = () => {
-    setUserInput("apple through queen squeal fry fluent")
+    setUserInput()
     setInputTranslated("")
   }
 
